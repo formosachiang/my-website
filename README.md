@@ -43,6 +43,19 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+### `npm run deploy`
+
+This project uses **GitHub Pages** for deployment. Follow these steps to deploy the application:
+
+Prerequisites
+Ensure that you have `gh-pages` installed as a dev dependency:
+`npm install gh-pages --save-dev`
+
+This builds the app for production and generates a build folder.
+Pushes the contents of the build folder to the gh-pages branch of your GitHub repository.
+
+Once the deployment is complete, your app will be accessible at: https://formosachiang.github.io/my-website/
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
