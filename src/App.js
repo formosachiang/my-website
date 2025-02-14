@@ -1,4 +1,6 @@
 import React from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme/theme";
 import Header from "./components/Header";
 import IntroSection from "./components/IntroSection";
 import SkillsSection from "./components/SkillsSection";
@@ -10,7 +12,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Header />
       <IntroSection />
       <SkillsSection />
@@ -19,7 +21,7 @@ function App() {
       <FeedbackSection />
       <ContactSection />
       <Footer />
-    </div>
+    </ThemeProvider>
   );
 }
 
