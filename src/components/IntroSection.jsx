@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
+import IntroImage from "../assets/intro.png";
 
 const IntroSection = () => {
   return (
@@ -104,7 +105,7 @@ const IntroSection = () => {
 
         {/* 主圖片 */}
         <img
-          src="https://via.placeholder.com/400"
+          src={IntroImage}
           alt="John"
           style={{
             width: "100%",
