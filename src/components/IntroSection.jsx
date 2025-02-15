@@ -17,7 +17,16 @@ const IntroSection = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ py: 18, backgroundColor: theme.palette.quaternary.main }}>
+    <Box
+      sx={{
+        py: 18, // 預設的上下padding（桌面版）
+        px: 8,  // 預設的左右padding（桌面版）
+        backgroundColor: theme.palette.quaternary.main,
+        [theme.breakpoints.down('sm')]: {
+          py: 8, // 在手機版 (sm 以下) 時減少上下padding
+        },
+      }}
+    >
       <Container maxWidth="lg">
         {/* 設置標題區塊 */}
         <Grid container spacing={4} alignItems="center">
