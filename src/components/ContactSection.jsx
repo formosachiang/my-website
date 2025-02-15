@@ -17,7 +17,7 @@ const ContactSection = () => {
             Contact me
           </Typography>
           <Typography variant="body1" color="textSecondary" sx={{ mt: 2 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Feel free to reach out with me!
           </Typography>
         </Box>
 
@@ -30,7 +30,7 @@ const ContactSection = () => {
               label="First name"
               variant="outlined"
               sx={{
-                mb: 3,
+                mb: 1,
                 borderColor: theme.palette.tertiary.main,
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
@@ -49,7 +49,7 @@ const ContactSection = () => {
               label="Last name"
               variant="outlined"
               sx={{
-                mb: 3,
+                mb: 1,
                 borderColor: theme.palette.tertiary.main,
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
@@ -70,7 +70,7 @@ const ContactSection = () => {
               label="Email"
               variant="outlined"
               sx={{
-                mb: 3,
+                mb: 1,
                 borderColor: theme.palette.tertiary.main,
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
@@ -89,7 +89,7 @@ const ContactSection = () => {
               label="Phone number"
               variant="outlined"
               sx={{
-                mb: 3,
+                mb: 1,
                 borderColor: theme.palette.tertiary.main,
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
@@ -112,7 +112,7 @@ const ContactSection = () => {
               multiline
               rows={6}
               sx={{
-                mb: 3,
+                mb: 1,
                 borderColor: theme.palette.tertiary.main,
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
