@@ -1,55 +1,105 @@
 import React from "react";
+import { Box, Grid, Card, CardContent, Typography, Button, Container } from "@mui/material";
+import { styled } from "@mui/system";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import Portfolio1Image from "../assets/portfolio1.png";
+import Portfolio2Image from "../assets/portfolio2.png";
+import Portfolio3Image from "../assets/portfolio3.png";
 
+// 專案資料
 const projects = [
   {
-    title: "E-Commerce App",
-    description: "A seamless shopping experience with modern UI design.",
-    image: "https://via.placeholder.com/300",
+    title: "Ahuse",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+    image: Portfolio1Image,
+    link: "https://dribbble.com",
   },
   {
-    title: "Brand Identity",
-    description: "Crafting a strong and unique brand identity for clients.",
-    image: "https://via.placeholder.com/300",
+    title: "App Dashboard",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+    image: Portfolio2Image,
+    link: "https://dribbble.com",
   },
   {
-    title: "Social Media Platform",
-    description: "Designing an intuitive and engaging social media app.",
-    image: "https://via.placeholder.com/300",
+    title: "Easy Rent",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+    image: Portfolio3Image,
+    link: "https://dribbble.com",
   },
 ];
 
+// 自訂卡片樣式
+const ProjectCard = styled(Card)(({ theme }) => ({
+  borderRadius: theme.spacing(2),
+  boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
+  transition: "all 0.3s ease-in-out",
+  "&:hover": {
+    transform: "translateY(-5px)",
+  },
+}));
+
 const ProjectsSection = () => {
   return (
-    <section
-      style={{
-        padding: "60px 20px",
-        backgroundColor: "#ffffff",
-      }}
-    >
-      <h2 style={{ fontSize: "32px", color: "#333", textAlign: "center", marginBottom: "40px" }}>
-        Recent Projects
-      </h2>
-      <div style={{ display: "flex", justifyContent: "center", gap: "40px", flexWrap: "wrap" }}>
+    <Container maxWidth="lg" sx={{ mb: 18 }}> {/* 增加底部空間 */}
+      {/* 頂部標題區塊 */}
+      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 4 }}>
+        <Box>
+          <Typography variant="h6" color="textSecondary">
+            Recent Projects
+          </Typography>
+          <Typography variant="h3" fontWeight="bold">
+            My Portfolio
+          </Typography>
+        </Box>
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: "#D14D72",
+            color: "white",
+            padding: "10px 20px",
+            borderRadius: "8px",
+            "&:hover": { backgroundColor: "#C13B60" },
+          }}
+          href="https://dribbble.com"
+          target="_blank"
+        >
+          Visit My Dribbble
+        </Button>
+      </Box>
+
+      {/* 專案列表 */}
+      <Grid container spacing={4}>
         {projects.map((project, index) => (
-          <div
-            key={index}
-            style={{
-              maxWidth: "300px",
-              textAlign: "center",
-              border: "1px solid #ddd",
-              borderRadius: "10px",
-              overflow: "hidden",
-            }}
-          >
-            <img src={project.image} alt={project.title} style={{ width: "100%" }} />
-            <div style={{ padding: "20px" }}>
-              <h4 style={{ fontSize: "20px", color: "#333", marginBottom: "10px" }}>{project.title}</h4>
-              <p style={{ fontSize: "16px", color: "#666" }}>{project.description}</p>
-            </div>
-          </div>
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <ProjectCard>
+              <img
+                src={project.image}
+                alt={project.title}
+                style={{ width: "100%", borderTopLeftRadius: "8px", borderTopRightRadius: "8px" }}
+              />
+              <CardContent>
+                <Typography variant="h6" fontWeight="bold">
+                  {project.title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" sx={{ mt: 1, mb: 2 }}>
+                  {project.description}
+                </Typography>
+                {/* 讓 "View In Dribbble" 置左對齊 */}
+                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
+                  <Button
+                    href={project.link}
+                    target="_blank"
+                    sx={{ textTransform: "none", fontWeight: "bold", display: "flex", alignItems: "center" }}
+                  >
+                    View In Dribbble <ArrowOutwardIcon sx={{ fontSize: 18, ml: 1 }} />
+                  </Button>
+                </Box>
+              </CardContent>
+            </ProjectCard>
+          </Grid>
         ))}
-      </div>
-    </section>
+      </Grid>
+    </Container>
   );
 };
 
