@@ -32,7 +32,7 @@ const IntroSection = () => {
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Typography variant="h6" color="textSecondary">
-              Hey, I am John
+              Hey, I am Allen
             </Typography>
             <Typography variant="h3" fontWeight="bold" color="textPrimary" sx={{ mt: 2 }}>
               I build <span style={{ color: theme.palette.primary.main }}>scalable software solutions</span> and improve user experiences
@@ -61,7 +61,7 @@ const IntroSection = () => {
             <ImageContainer>
               <img
                 src={IntroImage} // 替換成實際的圖片網址
-                alt="John"
+                alt="Yen"
                 style={{
                   maxWidth: "340px",  // 設定圖片最大寬度
                   height: "auto",     // 保持圖片比例

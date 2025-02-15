@@ -5,6 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import logo from "../assets/logo.png"; // Import the logo image
 
 const Footer = () => {
   const theme = useTheme();
@@ -13,60 +14,49 @@ const Footer = () => {
     <Box
       sx={{
         backgroundColor: theme.palette.quaternary.main, // 使用 quaternary 背景色
-        py: 4, // 上下內邊距
+        py: 6, // 上下內邊距
       }}
     >
       <Container maxWidth="lg">
-        {/* 上半部分：logo 和導航 */}
-        <Grid container alignItems="center" justifyContent="space-between" sx={{ mb: 4 }}>
+        {/* 上半部分：logo 圖片和導航 */}
+        <Grid container alignItems="center" justifyContent="space-between" sx={{ mb: 3 }}>
           <Grid item>
-            <Typography variant="h6" fontWeight="bold" color="textPrimary">
-              logoipsum
-            </Typography>
+            {/* 這裡替換文字為圖片 */}
+            <img src={logo} alt="Logo" style={{ width: "40px" }} />
           </Grid>
-          <Grid item>
-            <Grid container spacing={3} sx={{ justifyContent: "flex-end" }}>
+
+          {/* 中間導航項目 */}
+          <Grid item sx={{ display: "flex", justifyContent: "center", flexGrow: 1 }}>
+            <Grid container spacing={4} sx={{ justifyContent: "center" }}>
               <Grid item>
-                <Link href="#" color="textSecondary">
+                <Link href="#" color="textSecondary" sx={{ textDecoration: "none", "&:hover": { color: theme.palette.primary.main } }}>
                   Home
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" color="textSecondary">
+                <Link href="#" color="textSecondary" sx={{ textDecoration: "none", "&:hover": { color: theme.palette.primary.main } }}>
                   Portfolio
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" color="textSecondary">
+                <Link href="#" color="textSecondary" sx={{ textDecoration: "none", "&:hover": { color: theme.palette.primary.main } }}>
                   About me
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" color="textSecondary">
+                <Link href="#" color="textSecondary" sx={{ textDecoration: "none", "&:hover": { color: theme.palette.primary.main } }}>
                   Contact
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" color="textSecondary">
+                <Link href="#" color="textSecondary" sx={{ textDecoration: "none", "&:hover": { color: theme.palette.primary.main } }}>
                   Testimonials
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" color="textSecondary">
-                  Portfolio
                 </Link>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        {/* 下半部分：社交圖標和版權訊息 */}
-        <Grid container justifyContent="space-between" alignItems="center">
-          <Grid item>
-            <Typography variant="body2" color="textSecondary">
-              Made with 💖 by Airdokan
-            </Typography>
-          </Grid>
+          {/* 社交媒體圖標 */}
           <Grid item>
             <Grid container spacing={2} justifyContent="flex-end">
               <Grid item>
@@ -93,22 +83,36 @@ const Footer = () => {
           </Grid>
         </Grid>
 
-        {/* 版權與其他設定 */}
-        <Grid container justifyContent="flex-end" sx={{ mt: 2 }}>
+        {/* 分隔線 */}
+        <Box sx={{ borderBottom: `1px solid ${theme.palette.divider}`, mb: 3 }} />
+
+        {/* 下半部分：版權訊息和隱私政策等選項 */}
+        <Grid container justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
           <Grid item>
-            <Link href="#" color="textSecondary" sx={{ mr: 3 }}>
-              Privacy Policy
-            </Link>
+            <Typography variant="body2" color="textSecondary">
+              Made by Allen 2025. All rights reserved.
+            </Typography>
           </Grid>
+
+          {/* 隱私政策等選項 */}
           <Grid item>
-            <Link href="#" color="textSecondary" sx={{ mr: 3 }}>
-              Terms of Service
-            </Link>
-          </Grid>
-          <Grid item>
-            <Link href="#" color="textSecondary">
-              Cookies Settings
-            </Link>
+            <Grid container spacing={2} justifyContent="flex-end">
+              <Grid item>
+                <Link href="#" color="textSecondary" sx={{ mr: 3, textDecoration: "none", "&:hover": { color: theme.palette.primary.main } }}>
+                  Privacy Policy
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" color="textSecondary" sx={{ mr: 3, textDecoration: "none", "&:hover": { color: theme.palette.primary.main } }}>
+                  Terms of Service
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" color="textSecondary" sx={{ textDecoration: "none", "&:hover": { color: theme.palette.primary.main } }}>
+                  Cookies Settings
+                </Link>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
