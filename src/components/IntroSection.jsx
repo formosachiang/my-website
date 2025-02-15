@@ -1,122 +1,70 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Container, Typography, Button, Grid } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { styled } from "@mui/system";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import IntroImage from "../assets/intro.jpg";
 
+// 讓背景顏色覆蓋整個區域
+const ImageContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+  padding: theme.spacing(2),
+}));
+
 const IntroSection = () => {
+  const theme = useTheme();
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" }, // 手機版垂直排列，桌面版水平排列
-        alignItems: "center",
-        justifyContent: "space-between",
-        paddingY: { xs: "160px", md: "200px" }, // 上下的 padding
-        paddingX: { xs: "100px", md: "180px" }, // 左右的 padding
-        backgroundColor: "#F8FAFF",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* 左側：文字與按鈕 */}
-      <Box
-        sx={{
-          maxWidth: "600px",
-          textAlign: { xs: "center", md: "left" },
-          marginBottom: { xs: "40px", md: "0" }, // 在手機版時增加文字與圖片之間的間距
-        }}
-      >
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: "18px",
-            fontWeight: "400",
-            color: "#6C757D",
-            marginBottom: "16px",
-          }}
-        >
-          Hey, I am Allen
-        </Typography>
-        <Typography
-          variant="h1"
-          sx={{
-            fontSize: { xs: "32px", sm: "40px", md: "48px" },
-            fontWeight: "700",
-            lineHeight: "1.2",
-            color: "#000",
-            marginBottom: "24px",
-          }}
-        >
-          I create <span style={{ color: "#6C63FF" }}>product design</span> <br />
-          and <span style={{ color: "#6C63FF" }}>brand experience</span>
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: "16px",
-            lineHeight: "1.6",
-            color: "#6C757D",
-            marginBottom: "32px",
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
-          Suspendisse varius enim in eros elementum tristique.
-        </Typography>
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "#6C63FF",
-            color: "#fff",
-            textTransform: "none",
-            fontSize: "16px",
-            padding: "10px 20px",
-            borderRadius: "8px",
-            "&:hover": {
-              backgroundColor: "#5A54DC",
-            },
-          }}
-        >
-          Get In Touch
-        </Button>
-      </Box>
+    <Box sx={{ py: 18, backgroundColor: theme.palette.quaternary.main }}>
+      <Container maxWidth="lg">
+        {/* 設置標題區塊 */}
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <Typography variant="h6" color="textSecondary">
+              Hey, I am John
+            </Typography>
+            <Typography variant="h3" fontWeight="bold" color="textPrimary" sx={{ mt: 2 }}>
+              I build <span style={{ color: theme.palette.primary.main }}>scalable software solutions</span> and improve user experiences
+            </Typography>
+            <Typography variant="body1" color="textSecondary" sx={{ mt: 3 }}>
+            As a Software Engineer, I specialize in building high-performance applications and contributing to innovative tech solutions.
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: theme.palette.tertiary.main,
+                color: "white",
+                mt: 3,
+                padding: "10px 20px",
+                borderRadius: "8px",
+                "&:hover": { backgroundColor: theme.palette.tertiary.dark },
+              }}
+            >
+              Let’s Connect
+              <ArrowForwardIcon sx={{ fontSize: 18, ml: 1 }} />
+            </Button>
+          </Grid>
 
-      {/* 右側：圖片與背景 */}
-      <Box
-        sx={{
-          position: "relative",
-          width: { xs: "100%", md: "50%" }, // 小螢幕時寬度佔滿
-          display: "flex",
-          justifyContent: { xs: "center", md: "flex-end" }, // 手機版居中，桌面版右對齊
-        }}
-      >
-        {/* 背景形狀 */}
-        <Box
-          sx={{
-            width: { xs: "300px", sm: "350px", md: "400px" },
-            height: { xs: "300px", sm: "350px", md: "400px" },
-            backgroundColor: "#E8F0FF",
-            borderRadius: "32px",
-            position: "absolute",
-            right: { xs: "auto", md: "0" }, // 桌面版右對齊，手機版取消右對齊
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 1,
-          }}
-        ></Box>
-
-        {/* 主圖片 */}
-        <img
-          src={IntroImage}
-          alt="John"
-          style={{
-            width: "100%",
-            maxWidth: "400px",
-            borderRadius: "32px",
-            objectFit: "cover",
-            position: "relative",
-            zIndex: 2,
-          }}
-        />
-      </Box>
+          {/* 設置圖片區塊 */}
+          <Grid item xs={12} md={6}>
+            <ImageContainer>
+              <img
+                src={IntroImage} // 替換成實際的圖片網址
+                alt="John"
+                style={{
+                  maxWidth: "340px",  // 設定圖片最大寬度
+                  height: "auto",     // 保持圖片比例
+                  borderRadius: "15px",
+                  display: "block",   // 使圖片為區塊元素
+                  margin: "0 auto",   // 使圖片水平居中
+                }}
+              />
+            </ImageContainer>
+          </Grid>
+        </Grid>
+      </Container>
     </Box>
   );
 };
