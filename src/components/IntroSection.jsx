@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
-import IntroImage from "../assets/intro.png";
+import IntroImage from "../assets/intro.jpg";
 
 const IntroSection = () => {
   return (
@@ -34,7 +34,7 @@ const IntroSection = () => {
             marginBottom: "16px",
           }}
         >
-          Hey, I am John
+          Hey, I am Allen
         </Typography>
         <Typography
           variant="h1"

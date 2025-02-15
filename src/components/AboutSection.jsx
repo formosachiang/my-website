@@ -3,7 +3,7 @@ import { Box, Typography, Container } from "@mui/material";
 import { styled } from "@mui/system";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import AboutMeImage from "../assets/about_me.png";
+import AboutMeImage from "../assets/about_me.jpg";
 
 // 自訂樣式
 const AboutContainer = styled(Box)(({ theme }) => ({
@@ -71,15 +71,11 @@ const AboutSection = () => {
               About Me
             </Typography>
             <Typography variant="body1" color="textSecondary" paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              varius faucibus massa sollicitudin amet augue. Nibh metus a semper
-              purus mauris duis. Lorem eu neque, tristique quis duis. Nibh
-              scelerisque ac adipiscing velit non nulla in amet pellentesque.
+              Experienced software engineer with 3+ years in software development, specializing in app development.
+              Spearheaded projects that enhanced system performance by 32% and achieved a client satisfaction score of 4.6 out of 5.
             </Typography>
             <Typography variant="body1" color="textSecondary">
-              Sit turpis pretium eget maecenas. Vestibulum dolor mattis
-              consectetur eget commodo vitae. Amet pellentesque sit pulvinar
-              lorem mi a, euismod risus.
+              Proficient in Python and JavaScript, with a strong foundation in engineering.
             </Typography>
           </Box>
         </AboutContent>

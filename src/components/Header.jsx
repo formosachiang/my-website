@@ -87,7 +87,7 @@ const Header = () => {
             </Typography>
             <Typography
               component="a"
-              href="#testimonials"
+              href="#Projects"
               sx={{
                 fontSize: "16px",
                 fontWeight: 500,
@@ -96,7 +96,7 @@ const Header = () => {
                 "&:hover": { textDecoration: "underline" },
               }}
             >
-              Testimonials
+              Projects
             </Typography>
           </Box>
 

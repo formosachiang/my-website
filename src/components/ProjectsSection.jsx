@@ -2,29 +2,29 @@ import React from "react";
 import { Box, Grid, Card, CardContent, Typography, Button, Container } from "@mui/material";
 import { styled } from "@mui/system";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import Portfolio1Image from "../assets/portfolio1.png";
-import Portfolio2Image from "../assets/portfolio2.png";
-import Portfolio3Image from "../assets/portfolio3.png";
+import PortfolioImage1 from "../assets/portfolio1.png";
+import PortfolioImage2 from "../assets/portfolio2.png";
+import PortfolioImage3 from "../assets/portfolio3.jpg";
 
 // 專案資料
 const projects = [
   {
-    title: "Ahuse",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: Portfolio1Image,
-    link: "https://dribbble.com",
+    title: "Garbage Classification",
+    description: "The project is focused on garbage classification, where I used LandingLens and YOLOv8 to classify images of different types of recyclable items.",
+    image: PortfolioImage1,
+    link: "https://github.com/matthewraylee/garbage_classification",
   },
   {
-    title: "App Dashboard",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: Portfolio2Image,
-    link: "https://dribbble.com",
+    title: "Meal Plan",
+    description: "This project uses image recognition to identify items in your refrigerator and generate recipe suggestions through AI.",
+    image: PortfolioImage2,
+    link: "https://github.com/formosachiang/ai-project",
   },
   {
-    title: "Easy Rent",
+    title: "PannaCotta.Chloe",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-    image: Portfolio3Image,
-    link: "https://dribbble.com",
+    image: PortfolioImage3,
+    link: "https://github.com/formosachiang/PannaCotta.Chloe",
   },
 ];
 
@@ -60,10 +60,10 @@ const ProjectsSection = () => {
             borderRadius: "8px",
             "&:hover": { backgroundColor: "#C13B60" },
           }}
-          href="https://dribbble.com"
+          href="https://github.com/formosachiang"
           target="_blank"
         >
-          Visit My Dribbble
+          Visit My Github
         </Button>
       </Box>
 
@@ -84,14 +84,14 @@ const ProjectsSection = () => {
                 <Typography variant="body2" color="textSecondary" sx={{ mt: 1, mb: 2 }}>
                   {project.description}
                 </Typography>
-                {/* 讓 "View In Dribbble" 置左對齊 */}
+                {/* 讓 "View In Github" 置左對齊 */}
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
                   <Button
                     href={project.link}
                     target="_blank"
                     sx={{ textTransform: "none", fontWeight: "bold", display: "flex", alignItems: "center" }}
                   >
-                    View In Dribbble <ArrowOutwardIcon sx={{ fontSize: 18, ml: 1 }} />
+                    View In Github <ArrowOutwardIcon sx={{ fontSize: 18, ml: 1 }} />
                   </Button>
                 </Box>
               </CardContent>

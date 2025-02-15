@@ -9,29 +9,29 @@ import CodeIcon from "@mui/icons-material/Code";
 
 const skills = [
   {
-    title: "Strategy & Direction",
+    title: "APP Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+      "Developing intuitive and efficient mobile and web applications tailored to meet user needs and business goals.",
+    icon: <CodeIcon fontSize="large" />,
+  },
+  {
+    title: "Data Engineering",
+    description:
+      "Designing and optimizing data architectures and pipelines to ensure seamless data flow and accessibility for analysis.",
     icon: <DesignServicesIcon fontSize="large" />,
   },
   {
-    title: "Branding & Logo",
+    title: "Machine Learning",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+      "Applying advanced algorithms and data models to extract insights, make predictions, and improve decision-making processes.",
     icon: <BrushIcon fontSize="large" />,
   },
   {
-    title: "UI & UX Design",
+    title: "Cloud Computing",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+      "Leveraging scalable cloud technologies to build and manage flexible infrastructure solutions that drive innovation and performance.",
     icon: <PaletteIcon fontSize="large" />,
-  },
-  {
-    title: "Webflow Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    icon: <CodeIcon fontSize="large" />,
-  },
+  }
 ];
 
 // 自訂 Card 風格
