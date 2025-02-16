@@ -3,7 +3,6 @@ import { Box, Container, Grid, Typography, Link, IconButton } from "@mui/materia
 import { useTheme } from "@mui/material/styles";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import logo from "../assets/logo.png"; // Import the logo image
 
@@ -67,11 +66,6 @@ const Footer = () => {
               <Grid item>
                 <IconButton href="#" color="primary">
                   <InstagramIcon />
-                </IconButton>
-              </Grid>
-              <Grid item>
-                <IconButton href="#" color="primary">
-                  <TwitterIcon />
                 </IconButton>
               </Grid>
               <Grid item>

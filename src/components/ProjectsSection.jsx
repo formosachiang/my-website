@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: "PannaCotta.Chloe",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+    description: "This is a digital marketing project promoting a dessert brand, focusing on panna cotta drinks with a stylish and modern appeal.",
     image: PortfolioImage3,
     link: "https://github.com/formosachiang/PannaCotta.Chloe",
   },
