@@ -32,7 +32,7 @@ const IntroSection = () => {
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Typography variant="h6" color="textSecondary">
-              Hey, I am Allen
+              Hey, I am Yen
             </Typography>
             <Typography variant="h3" fontWeight="bold" color="textPrimary" sx={{ mt: 2 }}>
               I build <span style={{ color: theme.palette.primary.main }}>scalable software solutions</span> and improve user experiences

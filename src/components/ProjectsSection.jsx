@@ -4,7 +4,7 @@ import { styled } from "@mui/system";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import PortfolioImage1 from "../assets/portfolio1.png";
 import PortfolioImage2 from "../assets/portfolio2.png";
-import PortfolioImage3 from "../assets/portfolio3.jpg";
+import PortfolioImage3 from "../assets/portfolio3.png";
 
 // 專案資料
 const projects = [

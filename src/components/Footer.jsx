@@ -84,7 +84,7 @@ const Footer = () => {
         <Grid container justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
           <Grid item>
             <Typography variant="body2" color="textSecondary">
-              Made by Allen 2025. All rights reserved.
+              Made by Yen 2025. All rights reserved.
             </Typography>
           </Grid>
 
