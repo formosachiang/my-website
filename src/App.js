@@ -6,7 +6,8 @@ import IntroSection from "./components/IntroSection";
 import SkillsSection from "./components/SkillsSection";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
-import FeedbackSection from "./components/FeedbackSection";
+import ResumeSection from "./components/ResumeSection";
+// import FeedbackSection from "./components/FeedbackSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
@@ -18,7 +19,8 @@ function App() {
       <SkillsSection />
       <AboutSection />
       <ProjectsSection />
-      <FeedbackSection />
+      <ResumeSection />
+      {/* <FeedbackSection /> */}
       <ContactSection />
       <Footer />
     </ThemeProvider>
