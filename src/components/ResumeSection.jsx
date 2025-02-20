@@ -5,178 +5,196 @@ import SchoolIcon from '@mui/icons-material/School';
 
 /**
  * 單一「時間軸區塊」元件：
- * - 左側：職位／學位名稱 + 期間
- * - 中間：圓形 Icon (2.4rem x 2.4rem)
- * - 右側：公司／學校名稱 + 說明文字
+ * - 若 description 為陣列 => 顯示列點式
+ * - 若 description 為字串 => 顯示一般段落
  */
 const TimelineBlock = ({ icon, title, date, company, description }) => {
-  return (
-    <Box
-      sx={{
-        position: 'relative',
-        paddingTop: '1.4rem',
-        paddingBottom: '1.4rem',
-      }}
-    >
-      {/* 圓形 Icon（2.4rem），並將內部圖示縮小到 1.2rem */}
+    return (
       <Box
         sx={{
-          height: '2.4rem',
-          width: '2.4rem',
-          lineHeight: '2.4rem',
-          backgroundColor: '#313131',
-          borderRadius: '50%',
-          textAlign: 'center',
-          color: '#FFFFFF',
-          position: 'absolute',
-          left: '35%',           // 桌機版：在 35%
-          top: '1rem',
-          marginLeft: '-1.2rem', // 2.4rem/2 = 1.2rem
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 1,
-          // 平板以下（768px 以下）：
-          '@media (max-width:768px)': {
-            left: '2.4rem',
-            marginLeft: '-1.2rem',
-          },
-          // 手機以下（480px 以下）：
-          '@media (max-width:480px)': {
-            left: '1.8rem',
-            marginLeft: '-1.2rem',
-          },
+          position: 'relative',
+          paddingTop: '1.4rem',
+          paddingBottom: '1.4rem',
         }}
       >
-        {React.cloneElement(icon, { sx: { fontSize: '1.2rem' } })}
-      </Box>
-
-      {/* 左側：職位／學位名稱 + 期間 */}
-      <Box
-        sx={{
-          float: 'left',
-          width: '35%',
-          paddingRight: '90px',
-          textAlign: 'right',
-          '@media (max-width:768px)': {
-            float: 'none',
-            width: 'auto',
-            paddingRight: '15px',
-            textAlign: 'left',
-            paddingLeft: '7rem',
-            marginBottom: '1.5rem',
-          },
-          '@media (max-width:480px)': {
-            paddingLeft: '5.5rem',
-          },
-        }}
-      >
-        <Typography component="h4" sx={{ fontSize: '1.2rem', fontWeight: 'bold' }}>
-          {title}
-        </Typography>
-        <Typography variant="body1" color="textSecondary" sx={{ marginTop: '0.4rem' }}>
-          {date}
-        </Typography>
-      </Box>
-
-      {/* 右側：公司／學校名稱 + 說明文字 */}
-      <Box
-        sx={{
-          marginLeft: '35%',
-          paddingLeft: '60px',
-          '@media (max-width:768px)': {
-            margin: 0,
-            paddingLeft: '7rem',
-          },
-          '@media (max-width:480px)': {
-            paddingLeft: '5.5rem',
-          },
-        }}
-      >
-        <Typography
-          component="h4"
+        {/* 圓形 Icon */}
+        <Box
           sx={{
-            position: 'relative',
-            margin: 0,
-            paddingBottom: '1.2rem',
-            fontSize: '1.2rem',
-            fontWeight: 'bold',
-            '&::after': {
-              content: '""',
-              display: 'block',
-              height: '3px',
-              width: '50px',
-              background: 'rgba(0, 0, 0, 0.2)',
-              position: 'absolute',
-              left: 0,
-              bottom: 0,
+            height: '2.4rem',
+            width: '2.4rem',
+            lineHeight: '2.4rem',
+            backgroundColor: '#313131',
+            borderRadius: '50%',
+            textAlign: 'center',
+            color: '#FFFFFF',
+            position: 'absolute',
+            left: '35%',
+            top: '1rem',
+            marginLeft: '-1.2rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1,
+            '@media (max-width:768px)': {
+              left: '2.4rem',
+              marginLeft: '-1.2rem',
+            },
+            '@media (max-width:480px)': {
+              left: '1.8rem',
+              marginLeft: '-1.2rem',
             },
           }}
         >
-          {company}
-        </Typography>
-        <Typography variant="body1" color="textSecondary" sx={{ marginTop: '1rem', lineHeight: 1.8 }}>
-          {description}
-        </Typography>
+          {React.cloneElement(icon, { sx: { fontSize: '1.2rem' } })}
+        </Box>
+  
+        {/* 左側：職位／學位名稱 + 期間 */}
+        <Box
+          sx={{
+            float: 'left',
+            width: '35%',
+            paddingRight: '90px',
+            textAlign: 'right',
+            // 平板以下
+            '@media (max-width:768px)': {
+              float: 'none',
+              width: 'auto',
+              paddingRight: '15px',
+              textAlign: 'left',
+              paddingLeft: '6rem',   // 原本是 7rem => 改小
+              marginBottom: '1.5rem',
+            },
+            // 手機以下
+            '@media (max-width:480px)': {
+              paddingLeft: '5rem',   // 原本是 5.5rem => 改小
+            },
+          }}
+        >
+          <Typography component="h4" sx={{ fontSize: '1.2rem', fontWeight: 'bold' }}>
+            {title}
+          </Typography>
+          <Typography variant="body1" color="textSecondary" sx={{ marginTop: '0.4rem' }}>
+            {date}
+          </Typography>
+        </Box>
+  
+        {/* 右側：公司／學校名稱 + 說明文字 */}
+        <Box
+          sx={{
+            marginLeft: '35%',
+            paddingLeft: '60px',
+            // 平板以下
+            '@media (max-width:768px)': {
+              margin: 0,
+              paddingLeft: '6rem',   // 原本是 7rem => 改小
+            },
+            // 手機以下
+            '@media (max-width:480px)': {
+              paddingLeft: '5rem',   // 原本是 5.5rem => 改小
+            },
+          }}
+        >
+          {/* 公司/學校名稱 */}
+          <Typography
+            component="h4"
+            sx={{
+              position: 'relative',
+              margin: 0,
+              paddingBottom: '1.2rem',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              '&::after': {
+                content: '""',
+                display: 'block',
+                height: '3px',
+                width: '50px',
+                background: 'rgba(0, 0, 0, 0.2)',
+                position: 'absolute',
+                left: 0,
+                bottom: 0,
+              },
+            }}
+          >
+            {company}
+          </Typography>
+          {/* 說明文字 */}
+          <Typography variant="body1" color="textSecondary" sx={{ marginTop: '1rem', lineHeight: 1.8 }}>
+            {description}
+          </Typography>
+        </Box>
       </Box>
-    </Box>
-  );
+    );
 };
+  
 
 const ResumeSection = () => {
   const theme = useTheme();
 
-  // 工作經驗資料（示範用）
+  // 工作經驗資料（改成陣列 => 顯示列點式）
   const workExperience = [
     {
       title: 'UI Designer',
       date: 'July 2015 - Present',
       company: 'Awesome Studio',
-      description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
+      description: [
+        'Designing UI mockups and wireframes in Figma',
+        'Implementing responsive layouts using CSS frameworks',
+        'Collaborating with dev team on user experience flows',
+      ],
     },
     {
       title: 'Front-end Developer',
       date: 'July 2014 - June 2015',
       company: 'Super Cool Agency',
-      description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
+      description: [
+        'Developing interactive web pages with React',
+        'Optimizing site performance for SEO and speed',
+        'Integrating RESTful APIs and handling data',
+      ],
     },
     {
       title: 'Web Designer',
       date: 'May 2013 - June 2014',
       company: 'Great Designs Studio',
-      description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
+      description: [
+        'Creating design prototypes for clients',
+        'Ensuring cross-browser compatibility',
+        'Maintaining brand consistency across designs',
+      ],
     },
   ];
 
-  // 教育背景資料（示範用）
+  // 教育背景資料（維持字串 => 顯示一般段落）
   const education = [
     {
       title: 'Bachelor Degree',
       date: 'September 2016 - June 2021',
       company: 'National Seattle University',
       description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
+        'Completed a comprehensive curriculum covering software development, data structures, algorithms, and user interface design. Participated in various team projects and coding competitions.',
     },
     {
       title: 'Exchange Program',
       date: 'January 2021 - May 2021',
       company: 'Seattle School of Business',
       description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
+        'Studied international business and entrepreneurship. Collaborated with diverse groups on case studies, enhancing communication and teamwork skills.',
     },
   ];
 
   return (
     <Box
-      id="resume"
-      sx={{
-        backgroundColor: theme.palette.quaternary.main,
-        paddingTop: '8rem',
-        paddingBottom: '4rem',
-      }}
+        id="resume"
+        sx={{
+            backgroundColor: theme.palette.quaternary.main,
+            paddingTop: '8rem',
+            paddingBottom: '4rem',
+            // 手機以下
+            '@media (max-width:480px)': {
+            paddingTop: '6rem',
+            paddingBottom: '3rem',
+            },
+        }}
     >
       <Container maxWidth="lg">
         {/* 頂部標題區塊 */}
@@ -201,7 +219,6 @@ const ResumeSection = () => {
               position: 'relative',
               marginTop: '2rem',
               marginBottom: '5rem',
-              // 時間線
               '&::before': {
                 content: '""',
                 display: 'block',
@@ -209,13 +226,11 @@ const ResumeSection = () => {
                 height: '100%',
                 background: 'rgba(0, 0, 0, 0.1)',
                 position: 'absolute',
-                left: '35%', // 桌機版: left: 35%
+                left: '35%',
                 top: 0,
-                // 平板以下
                 '@media (max-width:768px)': {
                   left: '2.4rem',
                 },
-                // 手機以下
                 '@media (max-width:480px)': {
                   left: '1.8rem',
                 },
