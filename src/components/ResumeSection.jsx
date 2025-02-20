@@ -3,52 +3,44 @@ import { Box, Container, Typography, useTheme } from '@mui/material';
 import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';
 
-/**
- * 單一「時間軸區塊」元件：
- * 左側：職位／學位名稱 + 期間
- * 中間：圓形 Icon (與線條對齊)
- * 右側：公司／學校名稱 + 說明文字
- */
 const TimelineBlock = ({ icon, title, date, company, description }) => {
   return (
     <Box
       sx={{
         position: 'relative',
-        paddingTop: '2rem',
-        paddingBottom: '2rem',
+        paddingTop: '1.4rem',
+        paddingBottom: '1.4rem',
       }}
     >
-      {/* 中間較小的圓形 Icon */}
+      {/* 縮小後的圓形 Icon */}
       <Box
         sx={{
-          height: '3.6rem',
-          width: '3.6rem',
-          lineHeight: '3.6rem',
+          height: '2.4rem',
+          width: '2.4rem',
+          lineHeight: '2.4rem',
           backgroundColor: '#313131',
           borderRadius: '50%',
           textAlign: 'center',
           color: '#FFFFFF',
           position: 'absolute',
-          left: '35%',            // 電腦版: left: 35%
+          left: '35%',
           top: '1rem',
-          marginLeft: '-1.8rem', // 寬 3.6rem → 一半是 1.8rem
+          marginLeft: '-1.2rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1,
-          // 平板以下
           '@media (max-width:768px)': {
-            left: '2.4rem',
-            marginLeft: '-1.8rem',
+            left: '2rem',
+            marginLeft: '-1.2rem',
           },
-          // 手機以下
           '@media (max-width:480px)': {
-            left: '1.8rem',
-            marginLeft: '-1.8rem',
+            left: '1.4rem',
+            marginLeft: '-1.2rem',
           },
         }}
       >
-        {icon}
+        {React.cloneElement(icon, { sx: { fontSize: '1.2rem' } })}
       </Box>
 
       {/* 左側：職位／學位名稱 + 期間 */}
@@ -126,46 +118,44 @@ const TimelineBlock = ({ icon, title, date, company, description }) => {
 const ResumeSection = () => {
   const theme = useTheme();
 
-  // 工作經驗資料
   const workExperience = [
     {
       title: 'UI Designer',
       date: 'July 2015 - Present',
       company: 'Awesome Studio',
       description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.',
+        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
     },
     {
       title: 'Front-end Developer',
       date: 'July 2014 - June 2015',
       company: 'Super Cool Agency',
       description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.',
+        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
     },
     {
       title: 'Web Designer',
       date: 'May 2013 - June 2014',
       company: 'Great Designs Studio',
       description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.',
+        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
     },
   ];
 
-  // 教育背景資料
   const education = [
     {
       title: 'Bachelor Degree',
       date: 'September 2016 - June 2021',
       company: 'National Seattle University',
       description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.',
+        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
     },
     {
       title: 'Exchange Program',
       date: 'January 2021 - May 2021',
       company: 'Seattle School of Business',
       description:
-        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.',
+        'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris...',
     },
   ];
 
@@ -174,12 +164,12 @@ const ResumeSection = () => {
       id="resume"
       sx={{
         backgroundColor: theme.palette.quaternary.main,
-        paddingTop: '10rem',
-        paddingBottom: '10rem',
+        paddingTop: '8rem',
+        paddingBottom: '4rem',
       }}
     >
       <Container maxWidth="lg">
-        {/* 頂部標題區塊：Resume & More of my credentials 置中對齊 */}
+        {/* 頂部標題區塊 */}
         <Box sx={{ textAlign: 'center', marginBottom: '2rem' }}>
           <Typography variant="h6" color="textSecondary">
             Resume
@@ -191,7 +181,7 @@ const ResumeSection = () => {
 
         {/* Work Experience */}
         <Box sx={{ textAlign: 'center', marginBottom: '1rem' }}>
-          <Typography variant="h4" sx={{ color: theme.palette.primary.main }}>
+          <Typography variant="h5" sx={{ color: theme.palette.primary.main }}>
             Work Experience
           </Typography>
         </Box>
@@ -200,7 +190,7 @@ const ResumeSection = () => {
             sx={{
               position: 'relative',
               marginTop: '2rem',
-              marginBottom: '5rem', // 與下一區塊 (Education) 的距離
+              marginBottom: '5rem',
               '&::before': {
                 content: '""',
                 display: 'block',
@@ -210,11 +200,9 @@ const ResumeSection = () => {
                 position: 'absolute',
                 left: '35%',
                 top: 0,
-                // 斷點：平板以下
                 '@media (max-width:768px)': {
                   left: '2.4rem',
                 },
-                // 斷點：手機以下
                 '@media (max-width:480px)': {
                   left: '1.8rem',
                 },
@@ -236,7 +224,7 @@ const ResumeSection = () => {
 
         {/* Education */}
         <Box sx={{ textAlign: 'center', marginBottom: '1rem' }}>
-          <Typography variant="h4" sx={{ color: theme.palette.primary.main }}>
+          <Typography variant="h5" sx={{ color: theme.palette.primary.main }}>
             Education
           </Typography>
         </Box>

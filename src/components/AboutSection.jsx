@@ -64,7 +64,7 @@ const AboutSection = () => {
 
           {/* 右側文字區域 */}
           <Box sx={{ maxWidth: "500px" }}>
-            <Typography variant="subtitle1" color="textSecondary" gutterBottom>
+            <Typography variant="h6" color="textSecondary" gutterBottom>
               About
             </Typography>
             <Typography variant={isMobile ? "h4" : "h3"} fontWeight="bold" gutterBottom>
