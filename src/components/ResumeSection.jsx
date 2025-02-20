@@ -141,52 +141,63 @@ const ResumeSection = () => {
   // 工作經驗：description 以陣列呈現列點
   const workExperience = [
     {
-      title: 'UI Designer',
-      date: 'July 2015 - Present',
-      company: 'Awesome Studio',
+      title: 'Software Development Engineer',
+      date: 'May 2022 - June 2024',
+      company: 'IBM',
       description: [
-        'Designing UI mockups and wireframes in Figma',
-        'Implementing responsive layouts using CSS frameworks',
-        'Collaborating with dev team on user experience flows',
+        'Reduced response time by 32% by developing an AI-powered chatbot for an insurance company using Node.js and IBM Watson Assistant, incorporating 10 scenarios and 7 APIs for quick access to the database',
+        'Enabled end users from a top semiconductor distributor to easily subscribe to data by creating a user-friendly interface with 4 main modules and 16 web pages using Vue.js, and deploying it on Azure through Docker',
+        'Streamlined supply chain operations for a top 3 global semiconductor foundry by developing a Django-based platform, and effectively building 84 data pipelines for data integration and migration',
       ],
     },
     {
-      title: 'Front-end Developer',
-      date: 'July 2014 - June 2015',
-      company: 'Super Cool Agency',
+      title: 'Software Development Engineer',
+      date: 'September 2021 - December 2021',
+      company: 'IBM',
       description: [
-        'Developing interactive web pages with React',
-        'Optimizing site performance for SEO and speed',
-        'Integrating RESTful APIs and handling data',
+        'Enhanced site performance and streamlined content delivery by integrating 12 GraphQL APIs into a dynamic website developed with Angular and Adobe Experience Manager',
+        'Empowered users to create custom page layouts by designing an intuitive component-based platform, enhancing user experience and layout flexibility',
       ],
     },
     {
-      title: 'Web Designer',
-      date: 'May 2013 - June 2014',
-      company: 'Great Designs Studio',
+      title: 'QA Engineer Intern',
+      date: 'March 2021 - August 2021',
+      company: 'Shopee',
       description: [
-        'Creating design prototypes for clients',
-        'Ensuring cross-browser compatibility',
-        'Maintaining brand consistency across designs',
+        'Boosted system performance and reliability by developing precise and effective test scripts while working on a team of 6',
+        'Improved product value prediction and usability by actively participating in the development process to anticipate usage scenarios'
+      ],
+    },
+    {
+      title: 'Software Development Engineer Intern',
+      date: 'December 2019 - August 2021',
+      company: 'Bright Insight Lab',
+      description: [
+        'Drove digital transformation for textile companies by developing a business partnerships platform interface using HTML, JavaScript, and Vue.js',
+	      'Supported sustainable growth in the textile industry by analyzing internet traffic and user behavior to provide actionable insights',
       ],
     },
   ];
 
-  // 教育背景：description 維持字串
+  // 教育背景資料（description 改成陣列，呈現列點）
   const education = [
     {
-      title: 'Bachelor Degree',
-      date: 'September 2016 - June 2021',
-      company: 'National Seattle University',
-      description:
-        'Completed a comprehensive curriculum covering software development, data structures, algorithms, and user interface design. Participated in various team projects and coding competitions.',
+      title: 'Masters Degree',
+      date: 'June 2024 - June 2025',
+      company: 'University of Washington',
+      description: [
+        'Major: Information Systems',
+        'Relevent Courses: Business Data Analysis, Advanced Database Systems and Data Warehouse, Advanced Machine Learning, Advanced Business Data Mining',
+      ],
     },
     {
-      title: 'Exchange Program',
-      date: 'January 2021 - May 2021',
-      company: 'Seattle School of Business',
-      description:
-        'Studied international business and entrepreneurship. Collaborated with diverse groups on case studies, enhancing communication and teamwork skills.',
+      title: 'Bachelors Degree',
+      date: 'September 2017 - June 2021',
+      company: 'National Taiwan University',
+      description: [
+        'Major: Business Administration',
+        'Relevant Courses: Economics, Statistics, Accounting, Marketing Management, Operation Management'
+      ],
     },
   ];
 
@@ -199,7 +210,7 @@ const ResumeSection = () => {
         paddingBottom: '4rem',
         '@media (max-width:480px)': {
           paddingTop: '6rem',
-          paddingBottom: '3rem',
+          paddingBottom: '2rem',
         },
       }}
     >
