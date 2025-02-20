@@ -5,17 +5,17 @@ import SchoolIcon from '@mui/icons-material/School';
 
 /**
  * 單一「時間軸區塊」元件：
- * 左側：職位／學位名稱 + 期間（皆使用 Typography variant="h4" 及 body1 格式）
- * 中間：圓形 Icon
- * 右側：公司／學校名稱 + 說明文字（說明文字採用 Typography variant="body1" color="textSecondary"）
+ * 左側：職位／學位名稱 + 期間
+ * 中間：圓形 Icon (與線條對齊)
+ * 右側：公司／學校名稱 + 說明文字
  */
 const TimelineBlock = ({ icon, title, date, company, description }) => {
   return (
     <Box
       sx={{
         position: 'relative',
-        paddingTop: '2.5rem',
-        paddingBottom: '2.5rem',
+        paddingTop: '2rem',
+        paddingBottom: '2rem',
       }}
     >
       {/* 中間較小的圓形 Icon */}
@@ -29,13 +29,23 @@ const TimelineBlock = ({ icon, title, date, company, description }) => {
           textAlign: 'center',
           color: '#FFFFFF',
           position: 'absolute',
-          left: '35%',
+          left: '35%',            // 電腦版: left: 35%
           top: '1rem',
-          marginLeft: '-1.8rem',
+          marginLeft: '-1.8rem', // 寬 3.6rem → 一半是 1.8rem
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1,
+          // 平板以下
+          '@media (max-width:768px)': {
+            left: '2.4rem',
+            marginLeft: '-1.8rem',
+          },
+          // 手機以下
+          '@media (max-width:480px)': {
+            left: '1.8rem',
+            marginLeft: '-1.8rem',
+          },
         }}
       >
         {icon}
@@ -164,34 +174,33 @@ const ResumeSection = () => {
       id="resume"
       sx={{
         backgroundColor: theme.palette.quaternary.main,
-        paddingTop: '12rem',
-        paddingBottom: '12rem',
+        paddingTop: '10rem',
+        paddingBottom: '10rem',
       }}
     >
       <Container maxWidth="lg">
-        {/* 頂部簡介區塊，更新字型大小與樣式 */}
-        <Box sx={{ textAlign: 'center', marginBottom: '3rem' }}>
+        {/* 頂部標題區塊：Resume & More of my credentials 置中對齊 */}
+        <Box sx={{ textAlign: 'center', marginBottom: '2rem' }}>
           <Typography variant="h6" color="textSecondary">
             Resume
           </Typography>
-          <Typography variant="h3" fontWeight="bold">
-            More of my credentials.
+          <Typography variant="h3" fontWeight="bold" sx={{ marginTop: '0.5rem' }}>
+            More of my credentials
           </Typography>
         </Box>
 
-        {/* 工作經驗 */}
+        {/* Work Experience */}
+        <Box sx={{ textAlign: 'center', marginBottom: '1rem' }}>
+          <Typography variant="h4" sx={{ color: theme.palette.primary.main }}>
+            Work Experience
+          </Typography>
+        </Box>
         <Box sx={{ maxWidth: '980px', margin: '0 auto' }}>
-          <Box sx={{ textAlign: 'center', marginBottom: '1rem' }}>
-            <Typography variant="h4" sx={{ color: theme.palette.primary.main }}>
-              Work Experience
-            </Typography>
-          </Box>
-
           <Box
             sx={{
               position: 'relative',
               marginTop: '2rem',
-              marginBottom: '7rem',
+              marginBottom: '5rem', // 與下一區塊 (Education) 的距離
               '&::before': {
                 content: '""',
                 display: 'block',
@@ -201,9 +210,11 @@ const ResumeSection = () => {
                 position: 'absolute',
                 left: '35%',
                 top: 0,
+                // 斷點：平板以下
                 '@media (max-width:768px)': {
                   left: '2.4rem',
                 },
+                // 斷點：手機以下
                 '@media (max-width:480px)': {
                   left: '1.8rem',
                 },
@@ -223,19 +234,18 @@ const ResumeSection = () => {
           </Box>
         </Box>
 
-        {/* 教育背景 */}
+        {/* Education */}
+        <Box sx={{ textAlign: 'center', marginBottom: '1rem' }}>
+          <Typography variant="h4" sx={{ color: theme.palette.primary.main }}>
+            Education
+          </Typography>
+        </Box>
         <Box sx={{ maxWidth: '980px', margin: '0 auto' }}>
-          <Box sx={{ textAlign: 'center', marginBottom: '1rem' }}>
-            <Typography variant="h4" sx={{ color: theme.palette.primary.main }}>
-              Education
-            </Typography>
-          </Box>
-
           <Box
             sx={{
               position: 'relative',
               marginTop: '2rem',
-              marginBottom: '7rem',
+              marginBottom: '5rem',
               '&::before': {
                 content: '""',
                 display: 'block',
