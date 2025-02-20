@@ -3,6 +3,12 @@ import { Box, Container, Typography, useTheme } from '@mui/material';
 import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';
 
+/**
+ * 單一「時間軸區塊」元件：
+ * - 左側：職位／學位名稱 + 期間
+ * - 中間：圓形 Icon (2.4rem x 2.4rem)
+ * - 右側：公司／學校名稱 + 說明文字
+ */
 const TimelineBlock = ({ icon, title, date, company, description }) => {
   return (
     <Box
@@ -12,7 +18,7 @@ const TimelineBlock = ({ icon, title, date, company, description }) => {
         paddingBottom: '1.4rem',
       }}
     >
-      {/* 縮小後的圓形 Icon */}
+      {/* 圓形 Icon（2.4rem），並將內部圖示縮小到 1.2rem */}
       <Box
         sx={{
           height: '2.4rem',
@@ -23,19 +29,21 @@ const TimelineBlock = ({ icon, title, date, company, description }) => {
           textAlign: 'center',
           color: '#FFFFFF',
           position: 'absolute',
-          left: '35%',
+          left: '35%',           // 桌機版：在 35%
           top: '1rem',
-          marginLeft: '-1.2rem',
+          marginLeft: '-1.2rem', // 2.4rem/2 = 1.2rem
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1,
+          // 平板以下（768px 以下）：
           '@media (max-width:768px)': {
-            left: '2rem',
+            left: '2.4rem',
             marginLeft: '-1.2rem',
           },
+          // 手機以下（480px 以下）：
           '@media (max-width:480px)': {
-            left: '1.4rem',
+            left: '1.8rem',
             marginLeft: '-1.2rem',
           },
         }}
@@ -118,6 +126,7 @@ const TimelineBlock = ({ icon, title, date, company, description }) => {
 const ResumeSection = () => {
   const theme = useTheme();
 
+  // 工作經驗資料（示範用）
   const workExperience = [
     {
       title: 'UI Designer',
@@ -142,6 +151,7 @@ const ResumeSection = () => {
     },
   ];
 
+  // 教育背景資料（示範用）
   const education = [
     {
       title: 'Bachelor Degree',
@@ -191,6 +201,7 @@ const ResumeSection = () => {
               position: 'relative',
               marginTop: '2rem',
               marginBottom: '5rem',
+              // 時間線
               '&::before': {
                 content: '""',
                 display: 'block',
@@ -198,11 +209,13 @@ const ResumeSection = () => {
                 height: '100%',
                 background: 'rgba(0, 0, 0, 0.1)',
                 position: 'absolute',
-                left: '35%',
+                left: '35%', // 桌機版: left: 35%
                 top: 0,
+                // 平板以下
                 '@media (max-width:768px)': {
                   left: '2.4rem',
                 },
+                // 手機以下
                 '@media (max-width:480px)': {
                   left: '1.8rem',
                 },
