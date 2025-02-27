@@ -36,7 +36,6 @@ const ImageWrapper = styled(Box)(({ theme }) => ({
     left: "-10%",
     width: "100%",
     height: "100%",
-    // backgroundColor: theme.palette.primary.main, // 使用 MUI 主題顏色
     clipPath: "polygon(0 0, 100% 0, 80% 100%, 0% 100%)",
     zIndex: "-1",
   },
@@ -52,34 +51,37 @@ const AboutSection = () => {
 
   return (
     <Container maxWidth="lg">
-      <AboutContainer>
-        <AboutContent>
-          {/* 左側圖片區域 */}
-          <ImageWrapper>
-            <img
-              src={AboutMeImage} // 替換成你的圖片
-              alt="About Me"
-            />
-          </ImageWrapper>
+      {/* Add id="about" here */}
+      <Box id="about">
+        <AboutContainer>
+          <AboutContent>
+            {/* 左側圖片區域 */}
+            <ImageWrapper>
+              <img
+                src={AboutMeImage}
+                alt="About Me"
+              />
+            </ImageWrapper>
 
-          {/* 右側文字區域 */}
-          <Box sx={{ maxWidth: "500px" }}>
-            <Typography variant="h6" color="textSecondary" gutterBottom>
-              About
-            </Typography>
-            <Typography variant={isMobile ? "h4" : "h3"} fontWeight="bold" gutterBottom>
-              About Me
-            </Typography>
-            <Typography variant="body1" color="textSecondary" paragraph>
-              Experienced software engineer with 3+ years in software development, specializing in app development.
-              Spearheaded projects that enhanced system performance by 32% and achieved a client satisfaction score of 4.6 out of 5.
-            </Typography>
-            <Typography variant="body1" color="textSecondary">
-              Proficient in Python and JavaScript, with a strong foundation in engineering.
-            </Typography>
-          </Box>
-        </AboutContent>
-      </AboutContainer>
+            {/* 右側文字區域 */}
+            <Box sx={{ maxWidth: "500px" }}>
+              <Typography variant="h6" color="textSecondary" gutterBottom>
+                About
+              </Typography>
+              <Typography variant={isMobile ? "h4" : "h3"} fontWeight="bold" gutterBottom>
+                About Me
+              </Typography>
+              <Typography variant="body1" color="textSecondary" paragraph>
+                Experienced software engineer with 3+ years in software development, specializing in app development.
+                Spearheaded projects that enhanced system performance by 32% and achieved a client satisfaction score of 4.6 out of 5.
+              </Typography>
+              <Typography variant="body1" color="textSecondary">
+                Proficient in Python and JavaScript, with a strong foundation in engineering.
+              </Typography>
+            </Box>
+          </AboutContent>
+        </AboutContainer>
+      </Box>
     </Container>
   );
 };

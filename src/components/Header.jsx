@@ -91,7 +91,7 @@ const Header = () => {
                   cursor: "pointer", // Change cursor to pointer on hover
                 }}
               >
-                About me
+                About
               </Typography>
             </Link>
             <Link
@@ -181,7 +181,7 @@ const Header = () => {
             <ListItemText primary="Skills" />
           </ListItem>
           <ListItem button component="a" href="#about" onClick={handleDrawerToggle}>
-            <ListItemText primary="About me" />
+            <ListItemText primary="About" />
           </ListItem>
           <ListItem button component="a" href="#projects" onClick={handleDrawerToggle}>
             <ListItemText primary="Projects" />
