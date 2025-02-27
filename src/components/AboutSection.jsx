@@ -51,7 +51,6 @@ const AboutSection = () => {
 
   return (
     <Container maxWidth="lg">
-      {/* Add id="about" here */}
       <Box id="about">
         <AboutContainer>
           <AboutContent>
