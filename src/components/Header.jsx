@@ -13,15 +13,15 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
-import { Link } from "react-scroll"; // Import Link from react-scroll
-import logo from "../assets/logo.png"; // Import the logo image
+import { Link } from "react-scroll"; // 使用 react-scroll 的 Link
+import logo from "../assets/logo.png"; // 載入 logo 圖片
 
 const Header = () => {
-  const theme = useTheme(); // Access the theme
+  const theme = useTheme();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen); // Toggle the drawer state
+    setDrawerOpen(!drawerOpen);
   };
 
   return (
@@ -30,101 +30,85 @@ const Header = () => {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: "#ffffff", // Background color of the header
-          color: theme.palette.primary.main, // Primary color from the theme
-          borderBottom: "1px solid #e0e0e0", // Bottom border
+          backgroundColor: "#ffffff",
+          color: theme.palette.primary.main,
+          borderBottom: "1px solid #e0e0e0",
         }}
       >
         <Toolbar
           sx={{
             display: "flex",
-            justifyContent: "space-between", // Align items with space between
-            paddingX: { xs: "20px", md: "40px" }, // Responsive horizontal padding
+            justifyContent: "space-between",
+            paddingX: { xs: "20px", md: "40px" },
           }}
         >
-          {/* Left: Logo */}
+          {/* 左側 Logo */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <img
-              src={logo} // Use the logo image
+              src={logo}
               alt="Logo"
-              style={{ width: "50px", height: "50px", objectFit: "contain" }} // Logo dimensions
+              style={{ width: "50px", height: "50px", objectFit: "contain" }}
             />
           </Box>
 
-          {/* Center: Navigation links (visible on medium and larger screens) */}
+          {/* 中間導覽連結 (中大型螢幕) */}
           <Box
             sx={{
-              display: { xs: "none", md: "flex" }, // Hide on small screens
-              gap: "40px", // Space between navigation links
+              display: { xs: "none", md: "flex" },
+              gap: "40px",
             }}
           >
-            <Link
-              to="skills"
-              smooth={true}
-              duration={500} // Smooth scroll with 500ms duration
-            >
+            <Link to="skills" smooth={true} duration={500}>
               <Typography
                 sx={{
-                  fontSize: "16px", // Font size for links
+                  fontSize: "16px",
                   fontWeight: 500,
-                  textDecoration: "none", // Remove underline
-                  color: "#000000", // Black color for links
-                  "&:hover": { textDecoration: "underline" }, // Underline on hover
-                  cursor: "pointer", // Change cursor to pointer on hover
+                  textDecoration: "none",
+                  color: "#000000",
+                  "&:hover": { textDecoration: "underline" },
+                  cursor: "pointer",
                 }}
               >
                 Skills
               </Typography>
             </Link>
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-            >
+            <Link to="about" smooth={true} duration={500}>
               <Typography
                 sx={{
                   fontSize: "16px",
                   fontWeight: 500,
                   textDecoration: "none",
-                  color: "#000000", // Black color for links
+                  color: "#000000",
                   "&:hover": { textDecoration: "underline" },
-                  cursor: "pointer", // Change cursor to pointer on hover
+                  cursor: "pointer",
                 }}
               >
                 About
               </Typography>
             </Link>
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-            >
+            <Link to="projects" smooth={true} duration={500}>
               <Typography
                 sx={{
                   fontSize: "16px",
                   fontWeight: 500,
                   textDecoration: "none",
-                  color: "#000000", // Black color for links
+                  color: "#000000",
                   "&:hover": { textDecoration: "underline" },
-                  cursor: "pointer", // Change cursor to pointer on hover
+                  cursor: "pointer",
                 }}
               >
                 Projects
               </Typography>
             </Link>
-            <Link
-              to="resume"
-              smooth={true}
-              duration={500}
-            >
+            <Link to="resume" smooth={true} duration={500}>
               <Typography
                 sx={{
                   fontSize: "16px",
                   fontWeight: 500,
                   textDecoration: "none",
-                  color: "#000000", // Black color for links
+                  color: "#000000",
                   "&:hover": { textDecoration: "underline" },
-                  cursor: "pointer", // Change cursor to pointer on hover
+                  cursor: "pointer",
                 }}
               >
                 Resume
@@ -132,65 +116,137 @@ const Header = () => {
             </Link>
           </Box>
 
-          {/* Right: Contact Me button (visible on medium and larger screens) */}
+          {/* 右側 Contact Me 按鈕 */}
           <Button
             variant="outlined"
             href="#contact"
             sx={{
-              display: { xs: "none", md: "block" }, // Hide on small screens
-              color: theme.palette.primary.main, // Primary color for text
-              borderColor: theme.palette.primary.main, // Primary color for border
-              borderRadius: "5px", // Rounded corners
-              paddingX: "20px", // Horizontal padding
+              display: { xs: "none", md: "block" },
+              color: theme.palette.primary.main,
+              borderColor: theme.palette.primary.main,
+              borderRadius: "5px",
+              paddingX: "20px",
               "&:hover": {
-                backgroundColor: theme.palette.primary.main, // Hover background color
-                color: "#ffffff", // White text on hover
+                backgroundColor: theme.palette.primary.main,
+                color: "#ffffff",
               },
             }}
           >
             Contact Me
           </Button>
 
-          {/* Hamburger menu icon (visible on small screens) */}
+          {/* 小螢幕漢堡選單 */}
           <IconButton
             edge="start"
             color="inherit"
             aria-label="menu"
             onClick={handleDrawerToggle}
-            sx={{ display: { xs: "block", md: "none" } }} // Show on small screens
+            sx={{ display: { xs: "block", md: "none" } }}
           >
             <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
 
-      {/* Drawer (side menu) */}
+      {/* Drawer (側邊選單) */}
       <Drawer
         anchor="right"
         open={drawerOpen}
         onClose={handleDrawerToggle}
         sx={{
           "& .MuiDrawer-paper": {
-            width: "250px", // Drawer width
-            backgroundColor: "#ffffff", // Background color
+            width: "250px",
+            backgroundColor: "#ffffff",
           },
         }}
       >
-        <List>
-          <ListItem button component="a" href="#skills" onClick={handleDrawerToggle}>
-            <ListItemText primary="Skills" />
+        {/* 
+          1. 使 List 內容水平置中 (alignItems: 'center')
+          2. marginTop 讓內容稍微往下移
+        */}
+        {/* 讓清單離頂端、左端一點距離，維持左對齊 */}
+        <List sx={{ marginTop: "3rem", marginLeft: "2rem" }}>
+          <ListItem
+            button
+            component={Link}
+            to="skills"
+            smooth={true}
+            duration={500}
+            onClick={handleDrawerToggle}
+          >
+            <ListItemText
+              primary={
+                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                  Skills
+                </Typography>
+              }
+            />
           </ListItem>
-          <ListItem button component="a" href="#about" onClick={handleDrawerToggle}>
-            <ListItemText primary="About" />
+
+          <ListItem
+            button
+            component={Link}
+            to="about"
+            smooth={true}
+            duration={500}
+            onClick={handleDrawerToggle}
+          >
+            <ListItemText
+              primary={
+                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                  About
+                </Typography>
+              }
+            />
           </ListItem>
-          <ListItem button component="a" href="#projects" onClick={handleDrawerToggle}>
-            <ListItemText primary="Projects" />
+
+          <ListItem
+            button
+            component={Link}
+            to="projects"
+            smooth={true}
+            duration={500}
+            onClick={handleDrawerToggle}
+          >
+            <ListItemText
+              primary={
+                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                  Projects
+                </Typography>
+              }
+            />
           </ListItem>
-          <ListItem button component="a" href="#resume" onClick={handleDrawerToggle}>
-            <ListItemText primary="Resume" />
+
+          <ListItem
+            button
+            component={Link}
+            to="resume"
+            smooth={true}
+            duration={500}
+            onClick={handleDrawerToggle}
+          >
+            <ListItemText
+              primary={
+                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                  Resume
+                </Typography>
+              }
+            />
           </ListItem>
-          <ListItem button component="a" href="#contact" onClick={handleDrawerToggle}>
-            <ListItemText primary="Contact Me" />
+
+          <ListItem
+            button
+            component="a"
+            href="#contact"
+            onClick={handleDrawerToggle}
+          >
+            <ListItemText
+              primary={
+                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                  Contact Me
+                </Typography>
+              }
+            />
           </ListItem>
         </List>
       </Drawer>
