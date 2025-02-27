@@ -176,7 +176,7 @@ const Header = () => {
           >
             <ListItemText
               primary={
-                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                <Typography sx={{ fontSize: "20px", color: "#000000", fontWeight: 500 }}>
                   Skills
                 </Typography>
               }
@@ -193,7 +193,7 @@ const Header = () => {
           >
             <ListItemText
               primary={
-                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                <Typography sx={{ fontSize: "20px", color: "#000000", fontWeight: 500 }}>
                   About
                 </Typography>
               }
@@ -210,7 +210,7 @@ const Header = () => {
           >
             <ListItemText
               primary={
-                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                <Typography sx={{ fontSize: "20px", color: "#000000", fontWeight: 500 }}>
                   Projects
                 </Typography>
               }
@@ -227,7 +227,7 @@ const Header = () => {
           >
             <ListItemText
               primary={
-                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                <Typography sx={{ fontSize: "20px", color: "#000000", fontWeight: 500 }}>
                   Resume
                 </Typography>
               }
@@ -242,7 +242,7 @@ const Header = () => {
           >
             <ListItemText
               primary={
-                <Typography sx={{ fontSize: "20px", color: "#000000" }}>
+                <Typography sx={{ fontSize: "20px", color: "#000000", fontWeight: 500 }}>
                   Contact Me
                 </Typography>
               }
