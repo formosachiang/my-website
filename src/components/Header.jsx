@@ -1,5 +1,16 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Box, Typography, Button } from "@mui/material"
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Box,
+  Typography,
+  Button,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
 import logo from "../assets/logo.png"; // Import the logo image
@@ -48,29 +59,16 @@ const Header = () => {
           >
             <Typography
               component="a"
-              href="#home"
+              href="#skills"
               sx={{
                 fontSize: "16px", // Font size for links
                 fontWeight: 500,
                 textDecoration: "none", // Remove underline
-                color: theme.palette.primary.main, // Primary color
+                color: "#000000", // Black color for links
                 "&:hover": { textDecoration: "underline" }, // Underline on hover
               }}
             >
-              Home
-            </Typography>
-            <Typography
-              component="a"
-              href="#portfolio"
-              sx={{
-                fontSize: "16px",
-                fontWeight: 500,
-                textDecoration: "none",
-                color: "#333", // Secondary color for links
-                "&:hover": { textDecoration: "underline" },
-              }}
-            >
-              Portfolio
+              Skills
             </Typography>
             <Typography
               component="a"
@@ -79,7 +77,7 @@ const Header = () => {
                 fontSize: "16px",
                 fontWeight: 500,
                 textDecoration: "none",
-                color: "#333",
+                color: "#000000", // Black color for links
                 "&:hover": { textDecoration: "underline" },
               }}
             >
@@ -87,16 +85,29 @@ const Header = () => {
             </Typography>
             <Typography
               component="a"
-              href="#Projects"
+              href="#projects"
               sx={{
                 fontSize: "16px",
                 fontWeight: 500,
                 textDecoration: "none",
-                color: "#333",
+                color: "#000000", // Black color for links
                 "&:hover": { textDecoration: "underline" },
               }}
             >
               Projects
+            </Typography>
+            <Typography
+              component="a"
+              href="#resume"
+              sx={{
+                fontSize: "16px",
+                fontWeight: 500,
+                textDecoration: "none",
+                color: "#000000", // Black color for links
+                "&:hover": { textDecoration: "underline" },
+              }}
+            >
+              Resume
             </Typography>
           </Box>
 
@@ -145,17 +156,17 @@ const Header = () => {
         }}
       >
         <List>
-          <ListItem button component="a" href="#home" onClick={handleDrawerToggle}>
-            <ListItemText primary="Home" />
-          </ListItem>
-          <ListItem button component="a" href="#portfolio" onClick={handleDrawerToggle}>
-            <ListItemText primary="Portfolio" />
+          <ListItem button component="a" href="#skills" onClick={handleDrawerToggle}>
+            <ListItemText primary="Skills" />
           </ListItem>
           <ListItem button component="a" href="#about" onClick={handleDrawerToggle}>
             <ListItemText primary="About me" />
           </ListItem>
-          <ListItem button component="a" href="#testimonials" onClick={handleDrawerToggle}>
-            <ListItemText primary="Testimonials" />
+          <ListItem button component="a" href="#projects" onClick={handleDrawerToggle}>
+            <ListItemText primary="Projects" />
+          </ListItem>
+          <ListItem button component="a" href="#resume" onClick={handleDrawerToggle}>
+            <ListItemText primary="Resume" />
           </ListItem>
           <ListItem button component="a" href="#contact" onClick={handleDrawerToggle}>
             <ListItemText primary="Contact Me" />
