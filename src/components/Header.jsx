@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 import logo from "../assets/logo.png"; // Import the logo image
 
 const Header = () => {
@@ -57,58 +58,78 @@ const Header = () => {
               gap: "40px", // Space between navigation links
             }}
           >
-            <Typography
-              component="a"
-              href="#skills"
-              sx={{
-                fontSize: "16px", // Font size for links
-                fontWeight: 500,
-                textDecoration: "none", // Remove underline
-                color: "#000000", // Black color for links
-                "&:hover": { textDecoration: "underline" }, // Underline on hover
-              }}
+            <Link
+              to="skills"
+              smooth={true}
+              duration={500} // Smooth scroll with 500ms duration
             >
-              Skills
-            </Typography>
-            <Typography
-              component="a"
-              href="#about"
-              sx={{
-                fontSize: "16px",
-                fontWeight: 500,
-                textDecoration: "none",
-                color: "#000000", // Black color for links
-                "&:hover": { textDecoration: "underline" },
-              }}
+              <Typography
+                sx={{
+                  fontSize: "16px", // Font size for links
+                  fontWeight: 500,
+                  textDecoration: "none", // Remove underline
+                  color: "#000000", // Black color for links
+                  "&:hover": { textDecoration: "underline" }, // Underline on hover
+                  cursor: "pointer", // Change cursor to pointer on hover
+                }}
+              >
+                Skills
+              </Typography>
+            </Link>
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
             >
-              About me
-            </Typography>
-            <Typography
-              component="a"
-              href="#projects"
-              sx={{
-                fontSize: "16px",
-                fontWeight: 500,
-                textDecoration: "none",
-                color: "#000000", // Black color for links
-                "&:hover": { textDecoration: "underline" },
-              }}
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  color: "#000000", // Black color for links
+                  "&:hover": { textDecoration: "underline" },
+                  cursor: "pointer", // Change cursor to pointer on hover
+                }}
+              >
+                About me
+              </Typography>
+            </Link>
+            <Link
+              to="projects"
+              smooth={true}
+              duration={500}
             >
-              Projects
-            </Typography>
-            <Typography
-              component="a"
-              href="#resume"
-              sx={{
-                fontSize: "16px",
-                fontWeight: 500,
-                textDecoration: "none",
-                color: "#000000", // Black color for links
-                "&:hover": { textDecoration: "underline" },
-              }}
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  color: "#000000", // Black color for links
+                  "&:hover": { textDecoration: "underline" },
+                  cursor: "pointer", // Change cursor to pointer on hover
+                }}
+              >
+                Projects
+              </Typography>
+            </Link>
+            <Link
+              to="resume"
+              smooth={true}
+              duration={500}
             >
-              Resume
-            </Typography>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  color: "#000000", // Black color for links
+                  "&:hover": { textDecoration: "underline" },
+                  cursor: "pointer", // Change cursor to pointer on hover
+                }}
+              >
+                Resume
+              </Typography>
+            </Link>
           </Box>
 
           {/* Right: Contact Me button (visible on medium and larger screens) */}
