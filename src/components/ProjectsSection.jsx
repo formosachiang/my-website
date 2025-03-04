@@ -42,7 +42,7 @@ const ProjectsSection = () => {
   return (
     <Container maxWidth="lg" sx={{ mb: 18 }}> {/* 增加底部空間 */}
       {/* 頂部標題區塊 */}
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 4 }}>
+      <Box id="projects" sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 4 }}>
         <Box>
           <Typography variant="h6" color="textSecondary">
             Recent Projects

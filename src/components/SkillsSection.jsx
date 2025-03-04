@@ -60,7 +60,7 @@ const SkillsSection = () => {
 
   return (
     <Container maxWidth="lg">
-      <Box sx={{ py: 8 }}>
+      <Box id="skills" sx={{ py: 8 }}>
         <Typography variant="h6" color="textSecondary" gutterBottom>
           My Skills
         </Typography>
