@@ -3,6 +3,7 @@ import { Box, Container, Typography, Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/system";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Link } from "react-router-dom";
 import IntroImage from "../assets/intro.jpg";
 import BackgroundVideo from "../assets/video.mp4";
 
@@ -66,6 +67,8 @@ const IntroSection = () => {
               As a Software Engineer, I specialize in building high-performance applications and contributing to innovative tech solutions.
             </Typography>
             <Button
+              component={Link}
+              to="/content"
               variant="contained"
               sx={{
                 backgroundColor: theme.palette.tertiary.main,

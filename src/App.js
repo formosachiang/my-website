@@ -1,28 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme/theme";
-import Header from "./components/Header";
-import IntroSection from "./components/IntroSection";
-import SkillsSection from "./components/SkillsSection";
-import AboutSection from "./components/AboutSection";
-import ProjectsSection from "./components/ProjectsSection";
-import ResumeSection from "./components/ResumeSection";
-// import FeedbackSection from "./components/FeedbackSection";
-import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
+import ContentPage from "./pages/ContentPage";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
-      <IntroSection />
-      <SkillsSection />
-      <AboutSection />
-      <ProjectsSection />
-      <ResumeSection />
-      {/* <FeedbackSection /> */}
-      <ContactSection />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/my-website" element={<HomePage />} />
+          <Route path="/content" element={<ContentPage />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }
