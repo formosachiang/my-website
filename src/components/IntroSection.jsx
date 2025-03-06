@@ -3,9 +3,11 @@ import { Box, Container, Typography, Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/system";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Link } from "react-router-dom";
 import IntroImage from "../assets/intro.jpg";
+import BackgroundVideo from "../assets/video.mp4";
 
-// 讓背景顏色覆蓋整個區域
+// 讓圖片區塊的容器設定樣式
 const ImageContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "flex-end",
@@ -19,28 +21,54 @@ const IntroSection = () => {
   return (
     <Box
       sx={{
-        py: 18, // 預設的上下padding（桌面版）
-        px: 8,  // 預設的左右padding（桌面版）
-        backgroundColor: theme.palette.quaternary.main,
-        [theme.breakpoints.down('sm')]: {
-          py: 8, // 在手機版 (sm 以下) 時減少上下padding
+        position: "relative", // 讓內部的絕對定位元素以此為參考
+        py: 18,
+        px: 8,
+        overflow: "hidden", // 隱藏超出範圍的影片部分
+        [theme.breakpoints.down("sm")]: {
+          py: 8,
         },
       }}
     >
-      <Container maxWidth="lg">
-        {/* 設置標題區塊 */}
+      {/* 背景影片 */}
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          filter: "brightness(0.4)",
+          zIndex: -1,
+        }}
+      >
+        <source src={BackgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
-            <Typography variant="h6" color="textSecondary">
-              Hey, I am Yen
+            <Typography variant="h6" color="white">
+              Hey, I am Yen Wu
             </Typography>
-            <Typography variant="h3" fontWeight="bold" color="textPrimary" sx={{ mt: 2 }}>
-              I build <span style={{ color: theme.palette.primary.main }}>scalable software solutions</span> and improve user experiences
+            <Typography variant="h3" fontWeight="bold" color="white" sx={{ mt: 2 }}>
+              I build{" "}
+              <span style={{ color: "#5E3BEE" }}>
+                scalable software solutions
+              </span>{" "}
+              and improve user experiences
             </Typography>
-            <Typography variant="body1" color="textSecondary" sx={{ mt: 3 }}>
-            As a Software Engineer, I specialize in building high-performance applications and contributing to innovative tech solutions.
+            <Typography variant="body1" color="white" sx={{ mt: 3 }}>
+              As a Software Engineer, I specialize in building high-performance applications and contributing to innovative tech solutions.
             </Typography>
             <Button
+              component={Link}
+              to="/content"
               variant="contained"
               sx={{
                 backgroundColor: theme.palette.tertiary.main,
@@ -51,23 +79,22 @@ const IntroSection = () => {
                 "&:hover": { backgroundColor: theme.palette.tertiary.dark },
               }}
             >
-              Let’s Connect
+              View Content
               <ArrowForwardIcon sx={{ fontSize: 18, ml: 1 }} />
             </Button>
           </Grid>
 
-          {/* 設置圖片區塊 */}
           <Grid item xs={12} md={6}>
             <ImageContainer>
               <img
-                src={IntroImage} // 替換成實際的圖片網址
+                src={IntroImage}
                 alt="YenWu"
                 style={{
-                  maxWidth: "340px",  // 設定圖片最大寬度
-                  height: "auto",     // 保持圖片比例
+                  maxWidth: "340px",
+                  height: "auto",
                   borderRadius: "15px",
-                  display: "block",   // 使圖片為區塊元素
-                  margin: "0 auto",   // 使圖片水平居中
+                  display: "block",
+                  margin: "0 auto",
                 }}
               />
             </ImageContainer>
