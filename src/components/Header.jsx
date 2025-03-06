@@ -13,7 +13,8 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
-import { Link } from "react-scroll"; // 使用 react-scroll 的 Link
+import { Link as ScrollLink } from "react-scroll"; // 使用 react-scroll 的 Link
+import { Link as RouterLink } from "react-router-dom"; // 從 react-router-dom 引入並設定別名
 import logo from "../assets/logo.png"; // 載入 logo 圖片
 
 const Header = () => {
@@ -44,11 +45,13 @@ const Header = () => {
         >
           {/* 左側 Logo */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <img
-              src={logo}
-              alt="Logo"
-              style={{ width: "50px", height: "50px", objectFit: "contain" }}
-            />
+            <RouterLink to="/my-website" style={{ textDecoration: "none" }}>
+              <img
+                src={logo}
+                alt="Logo"
+                style={{ width: "50px", height: "50px", objectFit: "contain" }}
+              />
+            </RouterLink>
           </Box>
 
           {/* 中間導覽連結 (中大型螢幕) */}
@@ -58,7 +61,7 @@ const Header = () => {
               gap: "40px",
             }}
           >
-            <Link to="skills" smooth={true} duration={500}>
+            <ScrollLink to="skills" smooth={true} duration={500}>
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -71,8 +74,8 @@ const Header = () => {
               >
                 Skills
               </Typography>
-            </Link>
-            <Link to="about" smooth={true} duration={500}>
+            </ScrollLink>
+            <ScrollLink to="about" smooth={true} duration={500}>
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -85,8 +88,8 @@ const Header = () => {
               >
                 About
               </Typography>
-            </Link>
-            <Link to="projects" smooth={true} duration={500}>
+            </ScrollLink>
+            <ScrollLink to="projects" smooth={true} duration={500}>
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -99,8 +102,8 @@ const Header = () => {
               >
                 Projects
               </Typography>
-            </Link>
-            <Link to="resume" smooth={true} duration={500}>
+            </ScrollLink>
+            <ScrollLink to="resume" smooth={true} duration={500}>
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -113,7 +116,7 @@ const Header = () => {
               >
                 Resume
               </Typography>
-            </Link>
+            </ScrollLink>
           </Box>
 
           {/* 右側 Contact Me 按鈕 */}
@@ -160,15 +163,10 @@ const Header = () => {
           },
         }}
       >
-        {/* 
-          1. 使 List 內容水平置中 (alignItems: 'center')
-          2. marginTop 讓內容稍微往下移
-        */}
-        {/* 讓清單離頂端、左端一點距離，維持左對齊 */}
         <List sx={{ marginTop: "3rem", marginLeft: "2rem" }}>
           <ListItem
             button
-            component={Link}
+            component={ScrollLink}
             to="skills"
             smooth={true}
             duration={500}
@@ -185,7 +183,7 @@ const Header = () => {
 
           <ListItem
             button
-            component={Link}
+            component={ScrollLink}
             to="about"
             smooth={true}
             duration={500}
@@ -202,7 +200,7 @@ const Header = () => {
 
           <ListItem
             button
-            component={Link}
+            component={ScrollLink}
             to="projects"
             smooth={true}
             duration={500}
@@ -219,7 +217,7 @@ const Header = () => {
 
           <ListItem
             button
-            component={Link}
+            component={ScrollLink}
             to="resume"
             smooth={true}
             duration={500}
